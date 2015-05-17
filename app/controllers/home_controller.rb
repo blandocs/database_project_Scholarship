@@ -10,6 +10,10 @@ class HomeController < ApplicationController
 			@scholar[@i] = row
 			@i = @i + 1
 		end
+	end
+
+	def search_by_condition
+
 
 	end
 end

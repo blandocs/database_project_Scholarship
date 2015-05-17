@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'home/main'
 	get 'home/list_scholarship'
+	get 'home/search_by_condition'
 
 	root 'home#main'
   # The priority is based upon order of creation: first created -> highest priority.
