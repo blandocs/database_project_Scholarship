@@ -1,0 +1,29 @@
+<h1>All scholarship List</h1>
+
+<table border = "1" bordercolor = "#66CC00" cellpadding = "7">
+<tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>Year</th>
+	<th>Semester</th>
+	<th>Company</th>
+	<th>Amount</th>
+	<th>Number</th>
+	<th>apply_start</th>
+	<th>apply_end</th>
+	<th>homepage</th>
+</tr>
+
+
+<% @scholar.each do |row| %>
+	<tr>
+		<% row.each do |col| %>
+			<td><center><%= col %></center></td>
+		<% end %>
+	</tr>
+<% end %>
+</table>
+
+
+
+
