@@ -84,6 +84,5 @@ $(".home.predict").ready ->
 				}
 				dataType: "json"
 				success: (data,status) ->
-					data["possibility"]
-					alert("asdds")
+					alert("이 장학금에 붙을 확률은 " + data["possibility"] + "입니다")
 	bind_ajax3()
