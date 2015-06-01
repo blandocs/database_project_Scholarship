@@ -45,4 +45,4 @@ end
 
 gem "therubyracer"
 gem "less-rails-bootstrap"
-gem "nmatrix"
+#gem "nmatrix"

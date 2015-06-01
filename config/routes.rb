@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  get 'admin/main'
+	get 'admin/insert'
+	get 'admin/delete'
+	get 'admin/update'
+
+	get 'admin/insert_data'
+	get 'admin/delete_data'
+	get 'admin/update_data'
+
   get 'home/main'
 	get 'home/simple_search'
 	get 'home/hard_search'
 	get 'home/predict'
-	
-	get 'home/administrator'
 	
 	root 'home#main'
 	# The priority is based upon order of creation: first created -> highest priority.
