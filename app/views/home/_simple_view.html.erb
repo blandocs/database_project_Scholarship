@@ -1,0 +1,53 @@
+<div id = "simple_main">
+	<div class="page-header">
+		<h1>간단하게 검색하세요!  <small>대학구분, 소득구분</small></h1>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			나의 대학교 종류는?
+		</div>
+		
+		<div class="panel-body">
+			<input type = "radio" name = "university" value = 0 /> <label>  4년제 대학교  </label>
+			<input type = "radio" name = "university" value = 1 /> <label> 2 ~ 3년제 대학교  </label>
+			<input type = "radio" name = "university" value = 2 /> <label>  대학원  </label>
+		</div>  
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			나의 소득 구분은?
+		</div>
+		
+		<div class="panel-body">
+			<input type = "radio" name = "income" value = 0 /> <label>  기초생활수급자  </label>
+			<input type = "radio" name = "income" value = 1 /> <label> 차상위계층  </label>
+			<input type = "radio" name = "income" value = 2 /> <label>  해당없음  </label>
+		</div>
+	</div>
+
+	<button id = "simple_result_btn"  class = "btn btn-success btn-lg">검색</button>
+</div>
+
+<div id = "simple_result" style = "display:none">
+	<table id = "simple_table" class = "table" border = "1" bordercolor = "#66CC00" cellpadding = "7">
+	  <tr>
+		<th><center>ID</center></th>
+		<th><center>Name</center></th>
+		<th><center>Company</center></th>
+		<th><center>Amount</center></th>
+		<th><center>Number</center></th>
+		<th><center>ApplyStart</center></th>
+		<th><center>ApplyEnd</center></th>
+		<th><center>Homepage</center></th>
+		</tr>						  
+		
+		
+	</table>
+
+
+</div>
+
+
+

@@ -1,29 +1,34 @@
-<h1>All scholarship List</h1>
+<%= render "menu" %>
 
-<table border = "1" bordercolor = "#66CC00" cellpadding = "7">
-<tr>
-	<th>ID</th>
-	<th>Name</th>
-	<th>Year</th>
-	<th>Semester</th>
-	<th>Company</th>
-	<th>Amount</th>
-	<th>Number</th>
-	<th>apply_start</th>
-	<th>apply_end</th>
-	<th>homepage</th>
-</tr>
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-10 col-md-offset-1">	
 
+		<h1>All scholarship List</h1>
 
-<% @scholar.each do |row| %>
-	<tr>
-		<% row.each do |col| %>
-			<td><center><%= col %></center></td>
-		<% end %>
-	</tr>
-<% end %>
-</table>
+		<table class = "table" border = "1" bordercolor = "#66CC00" cellpadding = "7">
+			<tr>
+				<th><center>ID</center></th>
+				<th><center>Name</center></th>
+				<th><center>Company</center></th>
+				<th><center>Amount</center></th>
+				<th><center>Number</center></th>
+				<th><center>ApplyStart</center></th>
+				<th><center>ApplyEnd</center></th>
+				<th><center>Homepage</center></th>
+			</tr>
 
+			<% @scholar.each do |row| %>
+				<tr>
+					<% row.each do |col| %>
+						<td><center><%= col %></center></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
 
+		</div>
+	</div>
+</div>
 
 

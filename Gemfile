@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem "therubyracer"
+gem "less-rails-bootstrap"
+gem "nmatrix"

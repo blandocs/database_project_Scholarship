@@ -1,8 +1,29 @@
-<h1>Welcome to scholarship search program!</h1>
+<%= render "menu" %>
 
-<h2>Do you wanna see all of scholarship?</h2>
-<%= link_to "Click me","home/list_scholarship", class: 'btn'%>
+<div class = "container">
+	<div class = "row">
+		<div class = "col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			<div id = "main_view">
+				<h1><center>welcome!</center></h1>
+				<img src = "assets/fruit.png" class = "center-block" >
+			</div>
+			<div id = "simple_view" style = "display:none">
+				<%= render "simple_view"%>
+			</div>
+			<div id = "hard_view" style = "display:none">
+				<%= render "hard_view"%>
+			</div>
 
-<h2>Do you wanna search your fit scholarship?</h2>
-<%= link_to "Let's go", "home/search_by_condition", class: 'btn' %>
-
+			
+			<div id = "poss_view" style = "display:none">
+				<%= render "poss_view"%>
+			</div>
+		</div>
+		
+		<div class = "col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<button type = "button" id = "simple_search_btn" class = "btn btn-big">간편검색</button><br>
+			<button id = "hard_search_btn" class = "btn btn-big2">세부검색</button><br>
+			<button id = "possibility_btn" class = "btn btn-big3">가능성 예측</button>
+		</div>
+	</div>
+</div>

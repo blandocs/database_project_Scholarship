@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   get 'home/main'
-	get 'home/list_scholarship'
-	get 'home/search_by_condition'
-
+	get 'home/simple_search'
+	get 'home/hard_search'
+	get 'home/predict'
+	
+	get 'home/administrator'
+	
 	root 'home#main'
-  # The priority is based upon order of creation: first created -> highest priority.
+	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

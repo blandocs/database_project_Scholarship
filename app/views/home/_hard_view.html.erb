@@ -1,0 +1,107 @@
+<div id = "hard_main">
+	<div class="page-header">
+		<h1>정확하게 검색하세요!  <small>정보를 정확히 입력해주세요</small></h1>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			나의 대학교 종류는?
+		</div>
+		
+		<div class="panel-body">
+			<input type = "radio" name = "university" value = 0 /> <label>  4년제 대학교  </label>
+			<input type = "radio" name = "university" value = 1 /> <label> 2 ~ 3년제 대학교  </label>
+			<input type = "radio" name = "university" value = 2 /> <label>  대학원  </label>
+		</div>  
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			나의 소득 구분은?
+		</div>
+		
+		<div class="panel-body">
+			<input type = "radio" name = "income" value = 0 /> <label>  기초생활수급자  </label>
+			<input type = "radio" name = "income" value = 1 /> <label> 차상위계층  </label>
+			<input type = "radio" name = "income" value = 2 /> <label>  해당없음  </label>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			나의 전공은?
+		</div>
+		
+		<div class="panel-body">
+			<select class="form-control" name = "major"  placeholder="고르세요">
+			  <option value = 0>공학계열</option>
+			  <option value = 1>법학계열</option>
+			  <option value = 2>사범계열</option>
+			  <option value = 3>사회과학계열</option>
+			  <option value = 4>예체능계열</option>
+			  <option value = 5>약학계열</option>
+			  <option value = 6>의학계열</option>
+			  <option value = 7>인문학계열</option>
+			  <option value = 8>자연과학계열</option>
+			  <option value = 9>기타</option>
+			</select>
+
+			
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			평균 학점
+		</div>
+		
+		<div class="panel-body">
+			<input type = "text" id ="gpa" class="form-control" placeholder="4.5점 만점">
+		
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			현재 신청 가능 여부
+		</div>
+		
+		<div class="panel-body">
+			<input type = "radio" name = "available" value = 0 /> <label>  신청가능  </label>
+			<input type = "radio" name = "available" value = 1 /> <label>  신청불가능  </label>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			지원금은 최소 이정도여야 한다!
+		</div>
+		
+		<div class="panel-body">
+			<input type = "text" id ="min_price" class="form-control" placeholder="단위는 만원!">
+		</div>
+	</div>
+	<button id = "hard_result_btn"  class = "btn btn-success btn-lg">검색</button>
+</div>
+
+<div id = "hard_result" style = "display:none">
+	<table id = "hard_table" class = "table" border = "1" bordercolor = "#66CC00" cellpadding = "7">
+	  <tr>
+		<th><center>ID</center></th>
+		<th><center>Name</center></th>
+		<th><center>Company</center></th>
+		<th><center>Amount</center></th>
+		<th><center>Number</center></th>
+		<th><center>ApplyStart</center></th>
+		<th><center>ApplyEnd</center></th>
+		<th><center>Homepage</center></th>
+		</tr>						  
+		
+		
+	</table>
+
+
+</div>
+
+
+
