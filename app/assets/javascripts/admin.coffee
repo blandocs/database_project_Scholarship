@@ -44,5 +44,51 @@ $(".admin.insert_data").ready ->
 						alert("Insert Major_list Success")
 					else
 						alert("Fail Major_list")
-
+					location.load("/admin/main")
 	bind_ajax()
+
+$(".admin.delete_data").ready ->
+	bind_ajax2 = () ->
+		$("#delete_result_btn").unbind("click").click ->
+			$.ajax
+				type: "get"
+				url: "/admin/delete_data"
+				data: {
+					
+					delete_name: $("#delete_name").val()
+					delete_company: $("#delete_company").val()
+				}
+				dataType: "json"
+				success: (data,status) ->
+					if(data["error_delete_Scholar_list"] == 0)
+						alert("Delete Scholar_list Success")
+					else
+						alert("Fail Scholar_list")
+
+					if(data["error_delete_Scholar_cond"] == 0)
+						alert("Delete Scholar_cond Success")
+					else
+						alert("Fail Scholar_cond")
+
+					if(data["error_delete_Region_list"] == 0)
+						alert("Delete Scholar_Region Success")
+					else
+						alert("Fail Scholar_Region")
+
+					if(data["error_delete_Major_list"] == 0)
+						alert("Delete Major_list Success")
+					else
+						alert("Fail Major_list")
+					
+					if(data["error_delete_Document"] == 0)
+						alert("Delete Document Success")
+					else
+						alert("Fail Document")
+	
+					if(data["error_delete_Past_Result"] == 0)
+						alert("Delete Past_Result Success")
+					else
+						alert("Fail Past_Result")
+					location.load("/admin/main")
+	
+	bind_ajax2()

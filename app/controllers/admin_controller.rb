@@ -3,7 +3,6 @@ class AdminController < ApplicationController
   end
 
 	def insert_data
-		#result = params[:admin_name] + params[:admin_company] + params[:admin_amount] + params[:admin_number] + params[:admin_applystart] + params[:admin_applyend] + params[:admin_homepage] + params[:admin_gpa] + params[:admin_major] +params[:admin_uni]
 		
 		@error_Scholar_list = 0 
 		sql1 = "insert into Scholar_list (Name, Company, Amount, Number, ApplyStart, ApplyEnd, Homepage) values ( "	+ "'"	+ params[:admin_name] + "'," 	+	"'"+ params[:admin_company] + "'," 	+ params[:admin_amount] + "," 	+	params[:admin_number] + "," +	"'"+ params[:admin_applystart] + "'," +	"'"+ params[:admin_applyend] + "'," +	"'"+ params[:admin_homepage] + "')"
@@ -48,7 +47,59 @@ class AdminController < ApplicationController
 	end
 
 	def delete_data
+		
+		@error_delete_Scholar_cond = 0
+		sql2 = "delete from Scholar_cond where ID = (select ID from Scholar_list where Name = " + "'" + params[:delete_name] + "' and Company = '" + params[:delete_company]  + "')"
+		begin
+		  ActiveRecord::Base.connection.execute(sql2)
+		rescue
+			@error_delete_Scholar_cond = 1
+		end
 
+		@error_delete_Region_list = 0 
+		sql3 = "delete from Region_list where ID = (select ID from Scholar_list where Name = " + "'" + params[:delete_name] + "' and Company = '" + params[:delete_company] + "')"
+		begin
+		  ActiveRecord::Base.connection.execute(sql3)
+		rescue
+			@error_delete_Region_list = 1
+		end
+
+		@error_delete_Major_list = 0 
+		sql4 = "delete from Major_list where ID = (select ID from Scholar_list where Name = " + "'" + params[:delete_name] + "' and Company = '" + params[:delete_company] + "')"
+		begin
+		  ActiveRecord::Base.connection.execute(sql4)
+		rescue
+			@error_delete_Major_list = 1
+		end
+		
+		sql5 = "delete from Document where ID = (select ID from Scholar_list where Name = " + "'" + params[:delete_name] + "' and Company = '" + params[:delete_company] + "')"
+
+		@error_delete_Document = 0
+		begin
+		  ActiveRecord::Base.connection.execute(sql5)
+		rescue
+			@error_delete_Document = 1
+		end
+
+		sql6 = "delete from Past_Result where ID = (select ID from Scholar_list where Name = " + "'" + params[:delete_name]  + "' and Company = '" + params[:delete_company] + "')"
+		@error_delete_Past_Result = 0
+		begin
+		  ActiveRecord::Base.connection.execute(sql5)
+		rescue
+			@error_delete_Past_Result = 1
+		end
+
+		sql1 = "delete from Scholar_list where Name = '" + params[:delete_name] + "' and Company = '" + params[:delete_company] + "'"
+		
+		@error_delete_Scholar_list = 0
+		begin
+		  ActiveRecord::Base.connection.execute(sql5)
+		rescue
+			@error_delete_Scholar_list = 1
+		end
+	
+		render json: {error_delete_Scholar_list: @error_delete_Scholar_list, error_delete_Scholar_cond: @error_delete_Scholar_cond, error_delete_Region_list: @error_delete_Region_list, error_delete_Major_list: @error_delete_Major_list, error_delete_Document: @error_delete_Document, error_delete_Past_Result: @error_delete_Past_Result}
+		
 	end
 
 	def update_data
