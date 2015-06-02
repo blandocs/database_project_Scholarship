@@ -93,7 +93,7 @@ class AdminController < ApplicationController
 		
 		@error_delete_Scholar_list = 0
 		begin
-		  ActiveRecord::Base.connection.execute(sql5)
+		  ActiveRecord::Base.connection.execute(sql1)
 		rescue
 			@error_delete_Scholar_list = 1
 		end
@@ -103,6 +103,46 @@ class AdminController < ApplicationController
 	end
 
 	def update_data
+	
+		sql1 = "update Scholar_list set Amount=%s, Number=%s, ApplyStart=%s, ApplyEnd=%s, Homepage='%s' where Name='%s' and Company='%s'" %[params[:update_amount],params[:update_number],params[:update_applystart],params[:update_applyend],params[:update_homepage],params[:ori_name],params[:ori_company]]
+		
+	@error_1 = 0
+		begin
+		  ActiveRecord::Base.connection.execute(sql1)
+		rescue
+			@error_1 = 1
+		end
+ 
+ 		sql2 = "update Scholar_cond set GPA=%s, Income=%d, TypeofUniversity=%d where ID=(select ID from Scholar_list where Name='%s' and Company='%s')" %[params[:update_gpa], params[:update_income],params[:update_uni],params[:ori_name],params[:ori_company]]
+		@error_2 = 0
+		begin
+		  ActiveRecord::Base.connection.execute(sql2)
+		rescue
+			@error_2 = 1
+		end
+
+
+			sql3 = "update Region_list set Region='%s' where ID=(select ID from Scholar_list where Name='%s' and Company='%s')" %[params[:update_region],params[:ori_name],params[:ori_company]]
+
+ 		@error_3 = 0
+ 		begin
+ 		  ActiveRecord::Base.connection.execute(sql3)
+ 		rescue
+ 			@error_3 = 1
+ 		end
+
+ 
+ 			sql4 = "update Major_list set Major= '%s' where ID=(select ID from Scholar_list where Name='%s' and Company='%s')" %[params[:update_major],params[:ori_name],params[:ori_company]]
+ 
+ 		@error_4 = 0
+ 		begin
+		  ActiveRecord::Base.connection.execute(sql4)
+		rescue
+			@error_4 = 1
+ 		end
+ 
+		render json: {error_1: @error_1,error_2: @error_2, error_3: @error_3, error_4: @error_4}
+
 
 	end
 

@@ -92,3 +92,48 @@ $(".admin.delete_data").ready ->
 					location.load("/admin/main")
 	
 	bind_ajax2()
+
+$(".admin.update_data").ready ->
+	bind_ajax2 = () ->
+		$("#update_result_btn").unbind("click").click ->
+			$.ajax
+				type: "get"
+				url: "/admin/update_data"
+				data: {
+					
+					ori_name: $("#ori_name").val()
+					ori_company: $("#ori_company").val()
+					update_amount: $("#update_amount").val()
+					update_number: $("#update_number").val()
+					update_applystart: $("#update_applystart").val()
+					update_applyend: $("#update_applyend").val()
+					update_homepage: $("#update_homepage").val()
+					update_gpa: $("#update_gpa").val()
+					update_region: $("#update_region").val()
+					update_major: $("select[name=update_major]").val()
+					update_uni: $("input:radio[name=update_uni]:checked").val()
+					update_income: $("input:radio[name=update_income]:checked").val()
+				}
+				dataType: "json"
+				success: (data,status) ->
+					if(data["error_1"] == 0)
+						alert("update Scholar_list Success")
+					else
+						alert("Fail Scholar_list")
+
+					if(data["error_2"] == 0)
+						alert("update Scholar_cond Success")
+					else
+						alert("Fail Scholar_cond")
+					if(data["error_3"] == 0)
+						alert("update Region_list Success")
+					else
+						alert("Fail Region_list")
+					if(data["error_4"] == 0)
+						alert("update Major_list Success")
+					else
+						alert("Fail Major_list")
+			
+
+	
+	bind_ajax2()

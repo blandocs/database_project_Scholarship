@@ -1,0 +1,177 @@
+<%= render "menu" %>
+
+<div class = "container">
+		<div class = "col-md-4">
+			<div class="page-header">
+				<h1>바꿀 장학금을 입력하세요! <br><center><small>정보를 정확히 입력해주세요</small></center></h1>
+			</div>
+			
+			<br><br><br>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					장학금 이름
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="ori_name" class="form-control" placeholder="blank">
+				
+				</div>
+			</div>
+
+			<br><br><br>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					장학금 지원 회사
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="ori_company" class="form-control" placeholder="blank">
+				
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class = "col-md-4 col-md-offset-2">
+
+		<div id = "original_main">
+			<div class="page-header">
+				<h1>새로운 정보를 정확하게 입력하세요! <br><center><small>정보를 정확히 입력해주세요</small></center></h1>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Amount
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_amount" class="form-control" placeholder="단위 만원">
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Number
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_number" class="form-control" placeholder="뽑는 인원">
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					ApplyStart
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_applystart" class="form-control" placeholder="장학금 지원 시작일">
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					ApplyEnd
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_applyend" class="form-control" placeholder="장학금 지원 마감일">
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Homepage
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_homepage" class="form-control" placeholder="장학금 지원 사이트">
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					지원 가능한 대학교 선택
+				</div>
+				
+				<div class="panel-body">
+					<input type = "radio" name = "update_uni" value = 2 /> <label>  4년제 대학교  </label>
+					<input type = "radio" name = "update_uni" value = 4 /> <label> 2 ~ 3년제 대학교  </label>
+					<input type = "radio" name = "update_uni" value = 1 /> <label>  대학원  </label>
+				</div>  
+			</div>
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					소득 분위
+				</div>
+				
+				<div class="panel-body">
+					<input type = "radio" name = "update_income" value = 1 /> <label> 기초 수급자 </label>
+					<input type = "radio" name = "update_income" value = 2 /> <label> 차상위 </label>
+					<input type = "radio" name = "update_income" value = 4 /> <label> 해당 없음 </label>
+				</div>  
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					지원 가능한 과
+				</div>
+				
+				<div class="panel-body">
+					<select class="form-control" name = "update_major"  placeholder="고르세요">
+						<option value = "공학계열">공학계열</option>
+						<option value = "법학계열">법학계열</option>
+						<option value = "사범계열">사범계열</option>
+						<option value = "사회과학계열">사회과학계열</option>
+						<option value = "예체능계열">예체능계열</option>
+						<option value = "약학계열">약학계열</option>
+						<option value = "의학계열">의학계열</option>
+						<option value = "인문학계열">인문학계열</option>
+						<option value = "자연과학계열">자연과학계열</option>
+						<option value = "기타">기타</option>
+					</select>
+
+					
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					사는 지역
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_region" class="form-control" placeholder="시단위로 입력하시오">				
+				</div>
+			</div>
+
+				<div class="panel panel-default">
+				<div class="panel-heading">
+					지원 가능한 최소 평균 학점
+				</div>
+				
+				<div class="panel-body">
+					<input type = "text" id ="update_gpa" class="form-control" placeholder="4.5점 만점">
+				
+				</div>
+			</div>
+
+
+			<center><button id = "update_result_btn"  class = "btn btn-warning btn-lg">넣기</button></center>
+			</div>
+		</div>
+		
+		
+	
+</div>
+
